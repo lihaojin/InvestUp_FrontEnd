@@ -1,0 +1,28 @@
+.server {
+  margin-left:0px;
+  width:max-content;
+  max-width:200px;
+  padding:7px;
+  color:white;
+  background: gray ;
+  border-radius:15px;
+  margin-top: 5px;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  word-wrap: break-word;
+}
+
+.user {
+  margin-right:0px;
+  width:max-content;
+  max-width:200px;
+  padding:7px;
+  color:white;
+  background: #1aa3ff;
+  border-radius:15px;
+  margin-top: 5px;
+  margin-left: auto;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  word-wrap: break-word;
+}
