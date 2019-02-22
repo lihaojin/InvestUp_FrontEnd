@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import { ChatLog } from '../../components';
 import './ChatScreen.css';
+
 var watson = require('watson-developer-cloud');
 var assistant = new watson.AssistantV2({
+  iam_apikey: '{API_KEY}',
   version: '2018-11-08',
-  iam_apikey: '{apikey}',
+  url: '{URL}'
 });
 var session_id;
 
 class ChatScreen extends Component {
+
   componentDidMount() {
     //Define session_id when component is mounted to the DOM
     assistant.createSession({
-      assistant_id: '{assistant_id}',
+      assistant_id: '{ASSISTANTID}',
     }, function(err, response) {
       if (err) {
         console.error(err);
@@ -23,6 +27,7 @@ class ChatScreen extends Component {
       }
     });
   }
+
 
   constructor(props) {
     super(props);
@@ -49,17 +54,19 @@ class ChatScreen extends Component {
 
   handleSubmit(event) {
     let messages = this.state.messages;
+    let messageValue = this.state.messageValue;
 
-    if(this.state.messageValue !== '') {
+    if(messageValue !== '') {
       var newMessage = {
-        message: this.state.messageValue,
+        message: messageValue,
         origin: 'user'
       };
       messages.push(newMessage);
+      this.setState({messages: messages});
 
       //Post to Watson API and receive a response message
       assistant.message({
-        assistant_id: '{assistant_id}',
+        assistant_id: '{ASSISTANTID}',
         session_id: session_id,
           input: {'text': this.state.messageValue}
         },  function(err, response) {
@@ -70,6 +77,8 @@ class ChatScreen extends Component {
               message: 'Error, Please try again.',
               origin: 'server'
             };
+            messages.push(newMessage);
+            this.setState({messages: messages});
           }
           else
             for (var i=0; i<response.output.generic.length; i++) {
@@ -79,10 +88,11 @@ class ChatScreen extends Component {
               };
               messages.push(newMessage);
               console.log(messages);
+              this.setState({messages: messages});
             }
-      });
-      this.setState({messages: messages,
-                     messageValue: ''});
+      }.bind(this));
+
+      this.setState({messageValue: ''});
     }
     event.preventDefault();
   }
@@ -95,7 +105,7 @@ class ChatScreen extends Component {
           </div>
 
           <div>
-            <ChatLog messages={this.state.messages} />
+            <ChatLog messages={this.state.messages}/>
           </div>
 
           <div className="ChatForm">

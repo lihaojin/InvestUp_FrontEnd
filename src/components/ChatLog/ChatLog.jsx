@@ -4,6 +4,14 @@ import { ChatBubble } from '..';
 import './ChatLog.css';
 
 class ChatLog extends Component {
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +27,9 @@ class ChatLog extends Component {
           ))
         }
 
+        <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { this.messagesEnd = el; }}>
+        </div>
       </div>
     );
   }
