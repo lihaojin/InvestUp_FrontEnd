@@ -43,9 +43,12 @@ class ChatScreen extends Component {
     let messageValue = this.state.messageValue;
 
     if(messageValue !== '') {
+      var today = new Date();
       var newMessage = {
         message: messageValue,
-        origin: 'user'
+        origin: 'user',
+        date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
+        time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
       };
       messages.push(newMessage);
       this.setState({messages: messages});
@@ -53,24 +56,29 @@ class ChatScreen extends Component {
       //Post to Watson API and receive a response message
       assistant.message({
         workspace_id: '2e2def76-690a-4062-8161-e4432083c20d',
-        // session_id: session_id,
           input: {'text': this.state.messageValue}
         },  function(err, response) {
           var newMessage;
           if (err) {
             console.log('error:', err);
+            var today = new Date();
             newMessage = {
               message: 'Error, Please try again.',
-              origin: 'server'
+              origin: 'server',
+              date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
+              time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
             };
             messages.push(newMessage);
             this.setState({messages: messages});
           }
           else
             for (var i=0; i<response.output.generic.length; i++) {
+              var today = new Date();
               newMessage = {
                 message: response.output.generic[i].text,
-                origin: 'server'
+                origin: 'server',
+                date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
+                time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
               };
               messages.push(newMessage);
               console.log(messages);
