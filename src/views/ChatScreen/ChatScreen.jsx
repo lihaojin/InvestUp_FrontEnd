@@ -87,7 +87,7 @@ class ChatScreen extends Component {
     return (
       <div className="ChatScreen">
           <div className="ChatHeader">
-            <p id="Recipient">InvestoBot</p>
+            <p id="Recipient">InvestoPal</p>
           </div>
 
           <div>
