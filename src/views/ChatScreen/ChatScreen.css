@@ -35,22 +35,20 @@
   border-radius: 10px 0px 0px 10px;
   resize: none;
   padding-left: 5px;
-  padding-top: 5px;
+  padding-top: 7px;
   box-sizing: border-box;
   outline: none;
 }
 
 .ChatForm button {
-
   background-color: white;
   height: 30px;
   width: 40px;
-  border-color: white;
   border-left: none;
   border-radius: 0px 10px 10px 0px;
   padding-top: 1.5px;
   color: white;
-  cursor:pointer;
-  outline: none;
-  -moz-appearance: none;
+  cursor: pointer;
+  border: none;
+  margin-top: 1px;
 }
