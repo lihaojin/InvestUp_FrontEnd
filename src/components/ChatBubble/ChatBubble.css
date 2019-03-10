@@ -1,3 +1,11 @@
+.server + .server {
+  margin-top: 4px;
+}
+
+.user + .user {
+  margin-top: 4px;
+}
+
 .server {
   margin-left:0px;
   width:max-content;
@@ -6,7 +14,7 @@
   color:white;
   background: gray ;
   border-radius:15px;
-  margin-top: 5px;
+  margin-top: 12px;
   font-size: 13px;
   font-family: 'Roboto', sans-serif;
   word-wrap: break-word;
@@ -20,7 +28,7 @@
   color:white;
   background: #1aa3ff;
   border-radius:15px;
-  margin-top: 5px;
+  margin-top: 12px;
   margin-left: auto;
   font-size: 13px;
   font-family: 'Roboto', sans-serif;

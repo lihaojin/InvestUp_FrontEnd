@@ -4,30 +4,16 @@ import { Link } from 'react-router-dom';
 import { ChatLog } from '../../components';
 import './ChatScreen.css';
 
-var watson = require('watson-developer-cloud');
-var assistant = new watson.AssistantV2({
-  iam_apikey: '{API_KEY}',
+var AssistantV1 = require('watson-developer-cloud/assistant/v1');
+var assistant = new AssistantV1({
   version: '2018-11-08',
-  url: '{URL}'
+  iam_apikey: 'C2U_iHW-Rj--bcflZNmx8SAJ9vJy9T1o6xgv4rUY2LUS',
+  url: 'https://gateway.watsonplatform.net/assistant/api'
 });
-var session_id;
+
+//var session_id;
 
 class ChatScreen extends Component {
-
-  componentDidMount() {
-    //Define session_id when component is mounted to the DOM
-    assistant.createSession({
-      assistant_id: '{ASSISTANTID}',
-    }, function(err, response) {
-      if (err) {
-        console.error(err);
-      } else{
-          session_id = response.session_id;
-          console.log(session_id);
-      }
-    });
-  }
-
 
   constructor(props) {
     super(props);
@@ -66,8 +52,8 @@ class ChatScreen extends Component {
 
       //Post to Watson API and receive a response message
       assistant.message({
-        assistant_id: '{ASSISTANTID}',
-        session_id: session_id,
+        workspace_id: '2e2def76-690a-4062-8161-e4432083c20d',
+        // session_id: session_id,
           input: {'text': this.state.messageValue}
         },  function(err, response) {
           var newMessage;
