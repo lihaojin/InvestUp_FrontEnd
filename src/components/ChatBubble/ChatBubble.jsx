@@ -12,14 +12,26 @@ class ChatBubble extends Component {
     if (this.props.origin === 'server') {
       return (
         <div className="server">
-          {this.props.message}
+          <div className="serverMessage">
+            {this.props.message}
+          </div>
+
+          <div className="serverTime">
+            {this.props.time}
+          </div>
         </div>
       );
     }
     else
       return (
         <div className="user">
-          {this.props.message}
+          <div className="userTime">
+            {this.props.time}
+          </div>
+          
+          <div className="userMessage">
+            {this.props.message}
+          </div>
         </div>
       );
   }

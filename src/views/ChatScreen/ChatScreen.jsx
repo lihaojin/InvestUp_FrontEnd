@@ -48,7 +48,7 @@ class ChatScreen extends Component {
         message: messageValue,
         origin: 'user',
         date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
-        time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+        time: today.getHours() + ":" + today.getMinutes()
       };
       messages.push(newMessage);
       this.setState({messages: messages});
@@ -66,7 +66,7 @@ class ChatScreen extends Component {
               message: 'Error, Please try again.',
               origin: 'server',
               date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
-              time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+              time: today.getHours() + ":" + today.getMinutes()
             };
             messages.push(newMessage);
             this.setState({messages: messages});
@@ -78,7 +78,7 @@ class ChatScreen extends Component {
                 message: response.output.generic[i].text,
                 origin: 'server',
                 date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
-                time: today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+                time: today.getHours() + ":" + today.getMinutes() 
               };
               messages.push(newMessage);
               console.log(messages);

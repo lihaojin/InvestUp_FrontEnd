@@ -23,7 +23,7 @@ class ChatLog extends Component {
       <div className="ChatLog">
         {
           this.props.messages.map(message => (
-            <ChatBubble message={message.message} origin={message.origin} />
+            <ChatBubble message={message.message} origin={message.origin} time={message.time} />
           ))
         }
 

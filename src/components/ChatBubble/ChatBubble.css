@@ -1,36 +1,69 @@
 .server + .server {
-  margin-top: 4px;
+  margin-top: 3.2px;
 }
 
-.user + .user {
-  margin-top: 4px;
+.server:hover .serverTime {
+  display: block;
 }
 
 .server {
-  margin-left:0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.serverMessage {
+  display: flex;
   width:max-content;
   max-width:200px;
   padding:7px;
   color:white;
   background: gray ;
   border-radius:15px;
-  margin-top: 12px;
   font-size: 13px;
   font-family: 'Roboto', sans-serif;
   word-wrap: break-word;
 }
 
+.serverTime {
+  display: none;
+  margin-left: 12px;
+  font-size: 13px;
+  color: white;
+}
+
+.user + .user {
+  margin-top: 3.2px;
+}
+
+.user:hover .userTime {
+  display: block;
+}
+
 .user {
-  margin-right:0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.userMessage {
+  display: flex;
   width:max-content;
   max-width:200px;
   padding:7px;
   color:white;
   background: #1aa3ff;
   border-radius:15px;
-  margin-top: 12px;
-  margin-left: auto;
   font-size: 13px;
   font-family: 'Roboto', sans-serif;
   word-wrap: break-word;
+}
+
+.userTime {
+  display: none;
+  margin-right: 12px;
+  font-size: 13px;
+  color: white;
 }
