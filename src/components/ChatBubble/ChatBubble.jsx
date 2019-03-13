@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ChatBubble.css';
+import FadeIn from 'react-fade-in';
 
 class ChatBubble extends Component {
   constructor(props) {
@@ -11,28 +12,32 @@ class ChatBubble extends Component {
   render() {
     if (this.props.origin === 'server') {
       return (
-        <div className="server">
-          <div className="serverMessage">
-            {this.props.message}
-          </div>
+          <div className="server">
+            <FadeIn transitionDuration="300">
+              <div className="serverMessage">
+                {this.props.message}
+              </div>
+            </FadeIn>
 
-          <div className="serverTime">
-            {this.props.time}
+            <div className="serverTime">
+              ◦ {this.props.time}
+            </div>
           </div>
-        </div>
       );
     }
     else
       return (
-        <div className="user">
-          <div className="userTime">
-            {this.props.time}
+          <div className="user">
+              <div className="userTime">
+                {this.props.time} ◦
+              </div>
+
+            <FadeIn transitionDuration="300">
+              <div className="userMessage">
+                {this.props.message}
+              </div>
+            </FadeIn>
           </div>
-          
-          <div className="userMessage">
-            {this.props.message}
-          </div>
-        </div>
       );
   }
 }

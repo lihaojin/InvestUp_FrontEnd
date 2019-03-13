@@ -28,7 +28,7 @@
 
 .serverTime {
   display: none;
-  margin-left: 12px;
+  margin-left: 8px;
   font-size: 13px;
   color: white;
 }
@@ -63,7 +63,7 @@
 
 .userTime {
   display: none;
-  margin-right: 12px;
+  margin-right: 8px;
   font-size: 13px;
   color: white;
 }
