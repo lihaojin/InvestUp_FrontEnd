@@ -1,8 +1,9 @@
 .ChatLog {
-  width: 100%;
-  height:370px;
+  width: inherit;
+  height:380px;
   padding-bottom: 10px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: thin;

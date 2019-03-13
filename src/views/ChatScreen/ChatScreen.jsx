@@ -11,8 +11,6 @@ var assistant = new AssistantV1({
   url: 'https://gateway.watsonplatform.net/assistant/api'
 });
 
-//var session_id;
-
 class ChatScreen extends Component {
 
   constructor(props) {
@@ -43,12 +41,12 @@ class ChatScreen extends Component {
     let messageValue = this.state.messageValue;
 
     if(messageValue !== '') {
-      var today = new Date();
+      var date = new Date();
       var newMessage = {
         message: messageValue,
         origin: 'user',
-        date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
-        time: today.getHours() + ":" + today.getMinutes()
+        date: date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),
+        time: date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
       };
       messages.push(newMessage);
       this.setState({messages: messages});
@@ -61,24 +59,24 @@ class ChatScreen extends Component {
           var newMessage;
           if (err) {
             console.log('error:', err);
-            var today = new Date();
+            var date = new Date();
             newMessage = {
               message: 'Error, Please try again.',
               origin: 'server',
-              date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
-              time: today.getHours() + ":" + today.getMinutes()
+              date: date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),
+              time: date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
             };
             messages.push(newMessage);
             this.setState({messages: messages});
           }
           else
             for (var i=0; i<response.output.generic.length; i++) {
-              var today = new Date();
+              var date = new Date();
               newMessage = {
                 message: response.output.generic[i].text,
                 origin: 'server',
-                date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(),
-                time: today.getHours() + ":" + today.getMinutes() 
+                date: date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate(),
+                time: date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
               };
               messages.push(newMessage);
               console.log(messages);

@@ -1,7 +1,10 @@
 .ChatScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: black;
   border-radius: 18px;
-  width: 270px;
+  width: 300px;
   margin: 30px auto;
   padding: 25px;
 }
@@ -29,7 +32,7 @@
   font-size: 13px;
   background: white;
   height: 30px;
-  width: 230px;
+  width: 260px;
   border: 1.8px solid white;
   border-right: none;
   border-radius: 10px 0px 0px 10px;
