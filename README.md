@@ -4,7 +4,9 @@
 
 ## How to Run
 1. Clone this repository
-2. cd into the file path and type npm start
+2. cd into the file path and type "npm start"
+
+**Note:** If cross-origin read blocking (CORB) is causing an issue with API calls, try to run on firefox using "BROWSER=firefox npm start"
 
 ## Price of any stock
 <img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/price.gif' />
