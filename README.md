@@ -7,13 +7,13 @@
 2. cd into the file path and type npm start
 
 ## Price of any stock
-<img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/howtoinvest.gif' />
+<img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/price.gif' />
 
 ## Relevant news on any stock
 <img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/news.gif' />
 
 ## How to invest?
-<img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/price.gif' />
+<img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/howtoinvest.gif' />
 
 ## What do I need to invest?
 <img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/whatdoineed.gif' />
