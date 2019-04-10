@@ -1,7 +1,6 @@
 # InvestUp FrontEnd
 
-**InvestUp** is a chatbot web application trained with IBM Watson Assistant that educates new investors on the process of investment and how to begin. Investup is capable of retrieving real-time stock prices and relevant news articles using the IEX market data API. This chatbot is developed with a user friendly messenger interface using React JS that can be incorporated into any website.
-
+**InvestUp** is a chatbot web application trained with IBM Watson Assistant that educates new investors on the process of investment and how to begin. Investup is capable of retrieving real-time stock prices and relevant news articles using the IEX market data API. This chatbot is developed with a user friendly messenger interface using React JS.
 ### Node
 
 [Node](http://nodejs.org/) is really easy to install & now include [NPM](https://npmjs.org/).
