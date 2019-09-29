@@ -48,6 +48,7 @@ Also, be sure to have `git` available in your PATH, `npm` might need it.
 
     $ npm start
 
+## Note: API key needed to run demo. See demo clips below.
 
 ## Price of any stock
 <img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/price.gif' />
