@@ -49,8 +49,6 @@ Also, be sure to have `git` available in your PATH, `npm` might need it.
     $ npm start
 
 
-**Note:** If cross-origin read blocking (CORB) is creating an issue with API calls, try to run on firefox using "BROWSER=firefox npm start"
-
 ## Price of any stock
 <img src='https://github.com/lihaojin/InvestUp_FrontEnd/blob/master/gifs/price.gif' />
 
